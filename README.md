@@ -1,3 +1,10 @@
+# Projektuppgift Reselogg React - JavaScriptbaserad webbutveckling
+Den andra delen i projektet består av två webbsidor som konsumerar REST-webbtjänsten i den första delen. Dessa webbsidor är uppbyggda med React.
+
+För att starta systemet klona först projektet genom: **git clone https://github.com/selmakohnic/javascriptbaserad_webbutveckling_projekt_react.git**.
+
+<hr>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

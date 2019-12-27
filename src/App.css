@@ -1,38 +1,336 @@
-.App {
+/* Importerar teckensnittet som används i rubrikerna. */
+@import url("https://use.typekit.net/eyh0zje.css");
+
+/* Generella värden såsom typ av padding, responsiva bilder, bakgrundsfärg,
+   teckensnitt, teckenstorlek och teckensnitt för rubrikerna. */
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.95em;
+  line-height: 1.4;
+  background-color: #F8F8F8;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  font-family: kewl-script, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Headern består av en bakgrundsbild som täcker hela webbläsarfönstrets bredd
+   med en specifik höjd. Rubrikerna placeras i mitten och får olika storlekar
+   samt en del mellanrum. */
+header {
+  background-image: url("./header.jpg");
+  width: 100%;
+  height: 49em;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header h1, header h2 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header h1 {
+  margin-top: 0;
+  padding-top: 1.5em;
+  margin-bottom: 0;
+  font-size: 5em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header h2 {
+  margin-top: 0;
+  font-size: 3em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Divarna som innehåller huvudinnehållet får en bredd, placeras i mitten och en
+   del mellanrum. I diven för startsidan, "wrapper", placeras innehållet med flex
+   så att det får ett jämnt mellanrum. Resorna som presenteras visas med en
+   animering som gör att de tonas in. */
+#wrapper, #wrapperAdmin {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: -8em;
+  padding: 0 1.5em;
+}
+
+#wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content:space-between;
+  flex-wrap: wrap;
+}
+
+/* Källa: http://www.menucool.com/ui/slide-in-when-scrolling */
+.slideanim {
+  visibility:hidden;
+  visibility:visible\9;
+}
+
+.slideanim.slide {                  
+  visibility: visible;                  
+  animation: slide 1s;
+}
+
+.slideanim::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@keyframes slide {
+  0% {
+      opacity: 0;
+      transform: translateY(50%);
+  } 
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  } 
+}
+
+.slideanim i {
+  margin-right: 0.3em;
+}
+
+/* Resorna placeras i enskilda divar med en specifik bredd, bakgrundsfärg och
+   ett mellanrum nedåt. Textinnehållet får en del margin från sidorna. Rubriken
+   får en storlek och placeras i mitten. Ikonerna i textinnehållet får en del
+   mellanrum vid höger sida. */
+.travelCon {
+  width: 20.4em;
+  margin-bottom: 4em;
+  background-color: #fff;
+}
+
+.travelCon section {
+  margin: 0 1em 1em 1em;
+}
+
+/*
+.slideanim h2 {
+  font-size: 2.5em;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}*/
+
+.travelCon h3 {
+  font-size: 1.7em;
+  text-align: center;
+}
+
+.travelCon i {
+  margin-right: 0.5em;
+}
+
+/* Tabellen på admin-sidan får en bredd som täcker hela diven och en del mellanrum
+   nedanför. Rubrikerna görs om till versaler, får en blå bakgrundsfärg och vit
+   textfärg samt placeras till vänster. Varje rad görs lite luftigare och tecken-
+   storleken görs något mindre. Varannan rad får en vit bakgrundsfärg och varannan
+   får en ljusgrå för att lättare skilja dem åt. */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 3em;
+}
+
+th {
+  text-transform: uppercase;
+  background-color: #19bcdb;
   color: white;
+  text-align: left;
 }
 
-.App-link {
-  color: #61dafb;
+th, td {
+  padding: 1em;
+  font-size: 0.95em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+tr:nth-child(even) {
+  background-color: #eee;
+}
+
+tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+.fa-trash-alt:hover, .fa-edit:hover {
+  cursor: pointer;
+}
+
+/* Formulärets rubrik får ett teckensnitt. Raderna får en specifik bredd, placeras
+   till vänster, en del mellanrum nedåt och fetstil på texten. Inmatningsfälten
+   får en bredd på 100% och görs lite luftigare. Knappen får en bredd, blå 
+   bakgrundsfärg, vit textfärg, något rundade kanter, en del mellanrum och placeras
+   till höger. */
+form h3 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form p {
+  width: 47%;
+  float: left;
+  margin-bottom: 1.8em;
+  font-weight: bold;
+}
+
+form p:last-child {
+  float: none;
+  width: 100%;
+  overflow: auto;
+}
+
+.inputField {
+  width: 100%;
+  padding: .4em 0 .4em .4em;
+  margin-top: .5em;
+  font: inherit;
+  font-weight: initial;
+  border: 1px solid rgb(165, 164, 164);
+}
+
+.inputRight {
+  float: right;
+  margin-left: 3em;
+}
+
+#btn {
+  width: 15em;
+  border: none;
+  color: #fff;
+  background-color: #19bcdb;
+  text-transform: uppercase;
+  font: inherit;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 1em;
+  margin-top: 0em;
+  float: right;
+}
+
+#btn:hover {
+  cursor: pointer;
+}
+
+/* Innehållet i footern placeras i mitten och i fetstil med en del padding runt
+   sig. De två divarna placeras bredvid varandra. Ikonerna får en del mellanrum
+   åt höger medan linjen som skiljer divarna åt får mellanrum åt både höger och
+   vänster. */
+footer {
+  text-align: center;
+  font-weight: bold;
+  padding: 1.5em;
+}
+
+footer div {
+  display: inline-block;
+}
+
+footer .fa-plane, footer .fa-envelope {
+  margin-right: 0.4em;
+}
+
+footer #line {
+  margin-right: 0.8em;
+  margin-left: 0.8em;
+}
+
+/*------ MEDIA QUERIES ------*/
+@media screen and (max-width: 1000px) {
+  /* Minskar olika elements storlekar samt resornas mellanrum nedanför. */
+  header {
+    height: 40em;
   }
-  to {
-    transform: rotate(360deg);
+
+  header h1 {
+    font-size: 4em;
+  }
+  
+  header h2 {
+    font-size: 2.5em;
+  }
+
+  #wrapper {
+    max-width: 800px;
+  }
+
+  .travelCon {
+    margin-bottom: 2.5em;
   }
 }
+
+@media screen and (max-width: 850px) {
+  /* Inmatningsfälten hamnar under varandra */
+  form p {
+    width: 100%;
+  }
+
+  form p, .inputRight {
+    float: none;
+    margin-left: 0;
+    margin-bottom: 1em;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  /* Minskar storlek på resorna. */
+  .travelCon {
+    width: 17.5em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /* Minskar storlekar på olika element. Resorna får en bredd som täcker hela 
+     diven. */
+  header {
+    height: 35em;
+  }
+
+  #wrapper {
+    max-width: 400px;
+  }
+
+  .travelCon {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  /* Innehållet i footern placeras under varandra med en del mellanrum. Linjen
+     som skiljt divarna åt visas inte längre. */
+  footer #line {
+    display: none;
+  }
+
+  footer div {
+    display: block;
+  }
+
+  footer div:first-child{
+    margin-bottom: 0.6em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  /* Minskar storlekar på olika element. */
+  header {
+    height: 25em;
+  }
+
+  header h1 {
+    font-size: 3em;
+  }
+
+  header h2 {
+    font-size: 2em;
+  }
+}
+
