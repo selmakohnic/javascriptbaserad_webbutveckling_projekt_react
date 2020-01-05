@@ -3,6 +3,10 @@ Den andra delen i projektet består av två webbsidor som konsumerar REST-webbtj
 
 För att starta systemet klona först projektet genom: **git clone https://github.com/selmakohnic/javascriptbaserad_webbutveckling_projekt_react.git**.
 
+Demonstrationer av projektet finns här:
+* https://travel-log-sk.herokuapp.com/ 
+* https://travel-log-sk.herokuapp.com/admin
+
 <hr>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

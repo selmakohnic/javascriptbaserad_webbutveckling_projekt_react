@@ -6,6 +6,7 @@ export class AdminItem extends Component {
     render() {
         //Variabler med data
         const { _id, image, country, city, date, description } = this.props.travel;
+        
         //Returnerar en bild, land, stad, datum och en beskrivning för varje resa i tabellform
         return (
             <tr>
